@@ -32,20 +32,12 @@ export const theme = {
         }
       }
     },
-      // spacing
-
   spacing: (...args: number[]) => {
     const length = args.length
     if (length < 1 || length > 4) return '0px'
 
     return args.map(space => `${space * spacingBaseUnit}px`).join(' ')
   },
-    // spacing: {
-    //   small: '0.5rem',
-    //   medium: '1rem',
-    //   large: '2rem',
-    //   // Add spacing values for margins, paddings, etc.
-    // },
     radius: {
         none: '0px',
         xs: '4px',
