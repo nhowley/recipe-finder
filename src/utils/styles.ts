@@ -2,7 +2,10 @@ import { RecipeAppTheme } from "styled-components"
 import { Size, TypographyVariant } from "../styles/styles.model"
 import { ButtonSize } from "../components/Button/Button.model";
 
-export const calcRem = (size: number): string => `${size / 16}rem`
+export const calcRem = (size: number): string => {
+  const remSize = size >= 0 ? size / 16 : 0; 
+  return `${remSize}rem`;
+};
 
 export const getIconSize = (theme: RecipeAppTheme, size?: Size): string => {
   const { xxSmall, xSmall, small, medium, large, xLarge, xxLarge} = theme.iconSize;
