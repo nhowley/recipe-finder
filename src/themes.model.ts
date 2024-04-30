@@ -63,7 +63,7 @@ declare module 'styled-components' {
         }
         spacing: (...args: number[]) => string
         radius: Radius
-        icon: IconSize
+        iconSize: IconSize
     }
 
 
