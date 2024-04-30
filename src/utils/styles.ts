@@ -1,4 +1,4 @@
-import { RecipeAppTheme } from "styled-components"
+import { IconSize, RecipeAppTheme } from "styled-components"
 import { Size, TypographyVariant } from "../styles/styles.model"
 import { ButtonSize } from "../components/Button/Button.model";
 

@@ -1,5 +1,5 @@
 import { theme } from "../themes";
-import { calcRem, getButtonFontSizeBySize, getButtonPaddingBySize, getIconSize } from "../utils/styles";
+import { calcRem, getButtonFontSizeBySize, getButtonPaddingBySize, getIconSize, getIconSizeByButtonSize } from "../utils/styles";
 
 describe('calcrem function', () => {
   it('should return 0 when a minus value is provided', () => {
@@ -58,3 +58,18 @@ describe('getButtonPaddingBySize function', () => {
     expect(getButtonPaddingBySize(theme, 'xLarge')).toEqual('8px 56px');
   });
 });
+
+describe('getIconSizeByButtonSize function', () => {
+
+  it('should return default size if size is not provided', () => {
+    expect(getIconSizeByButtonSize()).toEqual('1.5rem');
+  });
+
+  it('should return size based on the provided size', () => {
+    expect(getIconSizeByButtonSize('small')).toEqual('1.25rem');
+    expect(getIconSizeByButtonSize('medium')).toEqual('1.5rem');
+    expect(getIconSizeByButtonSize('large')).toEqual('1.75rem');
+    expect(getIconSizeByButtonSize('xLarge')).toEqual('2rem');
+  });
+});
+
