@@ -1,10 +1,10 @@
 import { theme } from "../themes";
-import { getIconSize } from "../utils/styles";
+import { getButtonFontSizeBySize, getIconSize } from "../utils/styles";
 
 describe('getIconSize function', () => {
 
   it('should return default size if size is not provided', () => {
-    expect(getIconSize(theme)).toEqual('1.5rem'); // Default size is 'medium'
+    expect(getIconSize(theme)).toEqual('1.5rem');
   });
 
   it('should return size based on the provided size', () => {
@@ -17,3 +17,18 @@ describe('getIconSize function', () => {
     expect(getIconSize(theme, 'xxLarge')).toEqual('3.75rem');
   });
 });
+
+describe('getButtonFontSizeBySize function', () => {
+
+  it('should return default size if size is not provided', () => {
+    expect(getButtonFontSizeBySize(theme)).toEqual('14px');
+  });
+
+  it('should return size based on the provided size', () => {
+    expect(getButtonFontSizeBySize(theme, 'small')).toEqual('12px');
+    expect(getButtonFontSizeBySize(theme, 'medium')).toEqual('14px');
+    expect(getButtonFontSizeBySize(theme, 'large')).toEqual('16px');
+    expect(getButtonFontSizeBySize(theme, 'xLarge')).toEqual('18px');
+  });
+});
+
